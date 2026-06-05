@@ -1,107 +1,130 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
-const milestones = [
+const timeline = [
   {
-    year: '2025 - Present',
-    title: 'Started B.Tech CSE (AI & ML)',
-    description: 'Enrolled at Chandigarh University in B.Tech Computer Science Engineering specializing in AI & ML.',
-  },
-  {
-    year: 'Early 2025',
-    title: 'Learned Python & C++',
-    description: 'Deep-dived into core programming languages, building a strong foundation in data structures, algorithms, and OOP principles.',
-  },
-  {
-    year: 'Mid 2025',
-    title: 'Started building projects',
-    description: 'Transitioned from learning to building. Created functional applications applying learned concepts to real-world scenarios.',
-  },
-  {
-    year: 'Late 2025',
-    title: 'Worked with Azure technologies',
-    description: 'Explored Cloud & AI. Integrated Azure Cognitive Services into projects, building intelligent applications.',
+    year: '2022 - 2025',
+    title: 'Senior Secondary Education',
+    company: 'High School',
+    description: 'Completed with a strong focus on Computer Science and Mathematics, building the foundational logic for programming.',
+    type: 'education'
   },
   {
     year: '2026',
-    title: 'Built intelligent applications',
-    description: 'Developed advanced systems like Atlas (Smart Travel Guide) and Perception Analyzer, combining full-stack dev with AI.',
+    title: 'Full Stack Developer',
+    company: 'Freelance / Open Source',
+    description: 'Built and contributed to various open-source projects. Architected scalable web applications using React, Node.js, and MongoDB.',
+    type: 'experience'
   },
   {
-    year: 'Future Goal',
-    title: 'Build impactful software',
-    description: 'Continuously learning and improving problem-solving skills to build software that creates meaningful impact.',
-  },
+    year: '2026 - Present',
+    title: 'B.Tech CSE (AI & ML)',
+    company: 'University / Institute',
+    description: 'Specializing in Artificial Intelligence and Machine Learning, focusing on deep learning, neural networks, and scalable web applications.',
+    type: 'education'
+  }
 ];
 
 const Journey = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start center', 'end center'],
+    offset: ["start center", "end center"]
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
-    <section id="journey" className="py-32 relative bg-white" ref={containerRef}>
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        
-        <div className="mb-16 md:mb-24">
-          <h2 className="text-sm font-semibold tracking-widest text-primary uppercase mb-3">01. Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-text tracking-tight mb-6">The Path So Far</h3>
-          <p className="text-lg text-secondary max-w-2xl">
-            A cinematic timeline of my educational and professional growth, driven by curiosity and a passion for technology.
-          </p>
+    <section id="journey" className="py-32 bg-surface border-t border-gray-100" ref={containerRef}>
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="text-center mb-20 md:mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-sm font-semibold tracking-widest text-primary uppercase mb-3"
+          >
+            01. Journey
+          </motion.h2>
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-text tracking-tight mb-6"
+          >
+            My Path So Far
+          </motion.h3>
         </div>
 
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-[15px] md:left-[19px] top-0 bottom-0 w-[2px] bg-gray-100" />
+        <div className="max-w-4xl mx-auto relative">
           
-          {/* Animated Line Progress */}
-          <motion.div 
-            className="absolute left-[15px] md:left-[19px] top-0 w-[2px] bg-primary origin-top"
-            style={{ height: lineHeight }}
-          />
+          {/* Animated Timeline Track */}
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gray-100 rounded-full overflow-hidden">
+            <motion.div 
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary via-primary to-primary/20 w-full origin-top"
+              style={{ scaleY, bottom: 0 }}
+            />
+          </div>
 
-          <div className="space-y-16">
-            {milestones.map((milestone, index) => (
-              <JourneyItem key={index} milestone={milestone} />
-            ))}
+          <div className="space-y-12 md:space-y-24">
+            {timeline.map((item, index) => {
+              const isEven = index % 2 === 0;
+              
+              return (
+                <div key={index} className={`relative flex items-center justify-between md:justify-normal w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  {/* Glowing Node */}
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 flex items-center justify-center z-10">
+                    <motion.div 
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: false, margin: "-20%" }}
+                      transition={{ type: "spring", delay: 0.2 }}
+                      className="w-4 h-4 rounded-full bg-white border-4 border-primary shadow-[0_0_20px_rgba(37,99,235,0.6)]"
+                    />
+                  </div>
+
+                  {/* Empty space for alternating layout on desktop */}
+                  <div className="hidden md:block w-5/12" />
+
+                  {/* Card Content */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: isEven ? 50 : -50, y: 20 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, margin: "-15%" }}
+                    transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                    className="w-[calc(100%-3rem)] md:w-5/12 ml-12 md:ml-0 group"
+                  >
+                    <div className="bg-background border border-gray-100 p-8 rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+                      {/* Subtle hover gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                      
+                      <div className="flex flex-col mb-4 relative z-10">
+                        <span className="text-primary font-bold text-sm tracking-wider uppercase mb-2 flex items-center gap-2">
+                          <span className="w-8 h-[1px] bg-primary/30" />
+                          {item.year}
+                        </span>
+                        <h4 className="text-xl md:text-2xl font-bold text-text mb-1 tracking-tight">{item.title}</h4>
+                        <span className="text-secondary font-medium">{item.company}</span>
+                      </div>
+                      <p className="text-secondary leading-relaxed relative z-10">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              );
+            })}
           </div>
         </div>
-
       </div>
     </section>
-  );
-};
-
-const JourneyItem = ({ milestone }: { milestone: any }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start 85%', 'center center'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [40, 0]);
-
-  return (
-    <motion.div 
-      ref={ref}
-      style={{ opacity, y }}
-      className="relative pl-12 md:pl-20 group"
-    >
-      {/* Node indicator */}
-      <div className="absolute left-[11px] md:left-[15px] top-1.5 w-[10px] h-[10px] rounded-full bg-white border-2 border-primary ring-4 ring-white z-10 group-hover:scale-150 transition-transform duration-300" />
-      
-      <div className="flex flex-col">
-        <span className="text-sm font-medium text-primary mb-1">{milestone.year}</span>
-        <h4 className="text-xl md:text-2xl font-bold text-text mb-2">{milestone.title}</h4>
-        <p className="text-secondary text-base leading-relaxed">{milestone.description}</p>
-      </div>
-    </motion.div>
   );
 };
 

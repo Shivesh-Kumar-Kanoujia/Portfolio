@@ -3,6 +3,7 @@ import Lenis from 'lenis';
 import Hero from './components/Hero';
 import Journey from './components/Journey';
 import Skills from './components/Skills';
+import CurrentlyBuilding from './components/CurrentlyBuilding';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
@@ -11,7 +12,7 @@ import Navbar from './components/Navbar';
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
@@ -39,6 +40,7 @@ function App() {
         <Hero />
         <Journey />
         <Skills />
+        <CurrentlyBuilding />
         <Projects />
         <Certifications />
       </main>
