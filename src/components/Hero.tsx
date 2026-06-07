@@ -39,7 +39,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="mb-8 relative group">
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 bg-white relative z-10 transition-all duration-500 group-hover:scale-105 group-hover:-rotate-2 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)]">
               <img 
-                src="/images/profile.jpg" 
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`} 
                 alt="Shivesh Kumar Kanoujia" 
                 className="w-full h-full object-cover saturate-0 group-hover:saturate-100 transition-all duration-700"
                 onError={(e) => {
@@ -93,7 +93,7 @@ const Hero = () => {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </MagneticButton>
-            <MagneticButton href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <MagneticButton href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer">
               <span className="flex items-center gap-2 px-7 py-4 bg-surface text-text border border-gray-200 rounded-full font-medium shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-gray-300 transition-all duration-300">
                 <Download size={18} />
                 Resume

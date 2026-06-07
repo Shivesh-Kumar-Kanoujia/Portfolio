@@ -25,7 +25,7 @@ const CurrentlyBuilding = () => {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-2xl overflow-hidden bg-gray-100 border border-gray-100">
               <img
-                src="/images/atlas.png"
+                src={`${import.meta.env.BASE_URL}images/atlas.png`}
                 alt="Atlas AI Travel Guide"
                 className="w-full h-full object-cover"
                 onError={(e) => {

@@ -8,7 +8,7 @@ const projects = [
     tech: ['React.js', 'Node.js', 'MongoDB', 'OpenAI API', 'Azure Maps'],
     github: 'https://github.com/shivesh-kanoujia',
     demo: '#',
-    image: '/images/atlas.png',
+    image: `${import.meta.env.BASE_URL}images/atlas.png`,
     featured: true
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     tech: ['Next.js', 'TailwindCSS', 'PostgreSQL', 'Prisma'],
     github: 'https://github.com/shivesh-kanoujia',
     demo: '#',
-    image: '/images/expense.png',
+    image: `${import.meta.env.BASE_URL}images/expense.png`,
     featured: false
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     tech: ['Python', 'Flask', 'React', 'NLTK', 'D3.js'],
     github: 'https://github.com/shivesh-kanoujia',
     demo: '#',
-    image: '/images/perception.png',
+    image: `${import.meta.env.BASE_URL}images/perception.png`,
     featured: false
   }
 ];
