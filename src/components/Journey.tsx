@@ -10,18 +10,18 @@ const timeline = [
     type: 'education'
   },
   {
-    year: '2026',
-    title: 'Full Stack Developer',
-    company: 'Freelance / Open Source',
-    description: 'Built and contributed to various open-source projects. Architected scalable web applications using React, Node.js, and MongoDB.',
-    type: 'experience'
-  },
-  {
     year: '2026 - Present',
     title: 'B.Tech CSE (AI & ML)',
     company: 'University / Institute',
-    description: 'Specializing in Artificial Intelligence and Machine Learning, focusing on deep learning, neural networks, and scalable web applications.',
+    description: 'Specializing in Artificial Intelligence and Machine Learning, focusing on deep learning, neural networks, and building intelligent software solutions.',
     type: 'education'
+  },
+  {
+    year: '2026',
+    title: 'Full Stack Developer',
+    company: 'Freelance / Open Source',
+    description: 'Built and contributed to various open-source projects. Architected scalable web applications using React, Node.js, and PostgreSQL.',
+    type: 'experience'
   }
 ];
 

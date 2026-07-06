@@ -40,6 +40,11 @@ const certifications = [
     name: 'Applied Data Science with Python',
     issuer: 'IBM',
     icon: 'M4 6c0 1.1 3.6 2 8 2s8-.9 8-2M4 6v12c0 1.1 3.6 2 8 2s8-.9 8-2V6M4 12c0 1.1 3.6 2 8 2s8-.9 8-2'
+  },
+  {
+    name: 'SQL (Basic)',
+    issuer: 'HackerRank',
+    icon: 'M4 7v10c0 2 1.5 4 4 4h8c2.5 0 4-2 4-4V7c0-2-1.5-4-4-4H8c-2.5 0-4 2-4 4z'
   }
 ];
 

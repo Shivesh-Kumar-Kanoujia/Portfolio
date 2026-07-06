@@ -26,6 +26,12 @@ const skillCategories = [
     skills: ['Azure Cognitive Services']
   },
   {
+    title: 'DBMS',
+    icon: 'M4 7v10c0 2 1.5 4 4 4h8c2.5 0 4-2 4-4V7c0-2-1.5-4-4-4H8c-2.5 0-4 2-4 4z',
+    description: 'Relational database design, querying, and data management.',
+    skills: ['SQL', 'MySQL', 'PostgreSQL']
+  },
+  {
     title: 'Concepts',
     icon: 'M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11a2 2 0 0 1-2 2 2 2 0 0 1-2-2V9.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4zM4 20c0-3.3 2.7-6 6-6h4c3.3 0 6 2.7 6 6v1H4v-1z',
     description: 'Foundational problem-solving and software design principles.',

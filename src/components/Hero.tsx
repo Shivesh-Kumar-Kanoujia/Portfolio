@@ -81,7 +81,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2 md:gap-3 mb-8 text-lg md:text-xl text-text font-medium">
             <span>B.Tech CSE (AI & ML)</span>
             <span className="hidden md:inline text-gray-300">•</span>
-            <span className="text-secondary">Full Stack Developer</span>
+            <span className="text-secondary">Aspiring Software Engineer</span>
             <span className="hidden md:inline text-gray-300">•</span>
             <span className="text-secondary">AI Enthusiast</span>
           </motion.div>

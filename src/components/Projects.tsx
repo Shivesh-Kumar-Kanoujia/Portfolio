@@ -4,27 +4,27 @@ import { ExternalLink } from 'lucide-react';
 const projects = [
   {
     title: 'Atlas – AI Powered Smart Travel Guide',
-    description: 'A comprehensive travel companion powered by artificial intelligence. Features intelligent itinerary generation, real-time translating capabilities, local currency conversion, and dynamic point-of-interest recommendations based on user preferences. Built with a scalable microservices architecture to ensure seamless performance.',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'OpenAI API', 'Azure Maps'],
-    github: 'https://github.com/shivesh-kanoujia',
+    description: 'An AI-powered travel assistant that consolidates trip planning into one seamless platform. Features an intelligent chatbot for travel guidance, trip organization with budget and packing list management, real-time weather forecasts, currency conversion, and emergency travel information — all wrapped in a responsive, intuitive interface.',
+    tech: ['Next.js', 'FastAPI', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Llama AI', 'OpenWeather API'],
+    github: 'https://github.com/Shivesh-Kumar-Kanoujia',
     demo: '#',
     image: `${import.meta.env.BASE_URL}images/atlas.png`,
     featured: true
   },
   {
     title: 'Personal Expense Tracker',
-    description: 'An elegant financial dashboard for tracking daily expenses, managing budgets, and visualizing spending habits over time. Includes categorised breakdown charts and predictive spending alerts.',
-    tech: ['Next.js', 'TailwindCSS', 'PostgreSQL', 'Prisma'],
-    github: 'https://github.com/shivesh-kanoujia',
+    description: 'A full-stack financial management application for tracking daily expenses and income. Features secure authentication, transaction categorization, and interactive visual dashboards powered by Pandas and Matplotlib — turning raw spending data into clear, actionable insights through a clean responsive interface.',
+    tech: ['Flask', 'Pandas', 'NumPy', 'Matplotlib', 'PostgreSQL', 'HTML', 'CSS'],
+    github: 'https://github.com/Shivesh-Kumar-Kanoujia',
     demo: '#',
     image: `${import.meta.env.BASE_URL}images/expense.png`,
     featured: false
   },
   {
     title: 'Perception Analyzer',
-    description: 'A sentiment analysis tool that processes social media feeds and news articles to gauge public opinion on specific topics or brands in real-time. Features interactive data visualizations.',
-    tech: ['Python', 'Flask', 'React', 'NLTK', 'D3.js'],
-    github: 'https://github.com/shivesh-kanoujia',
+    description: 'An AI-powered review analysis tool that helps users understand public opinion about products. Leverages Azure AI and NLP to perform sentiment analysis, extract key phrases, and generate concise summaries — enabling informed purchasing decisions through a clean, intuitive interface.',
+    tech: ['Python', 'Azure AI', 'NLP', 'Flask'],
+    github: 'https://github.com/Shivesh-Kumar-Kanoujia',
     demo: '#',
     image: `${import.meta.env.BASE_URL}images/perception.png`,
     featured: false
